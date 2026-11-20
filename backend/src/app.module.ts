@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CategoriesModule } from './categories/categories.module';
 import { CommonModule } from './common/common.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { CommonModule } from './common/common.module';
     }),
     CategoriesModule,
     CommonModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

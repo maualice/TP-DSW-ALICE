@@ -9,6 +9,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { Product } from '../../products/entities/product.entity';
 
 @Entity('categories')
 export class Category {
@@ -68,7 +69,8 @@ export class Category {
   @OneToMany(() => Category, (category) => category.parent)
   children: Category[];
 
-  // Relación con Product: se vinculará al implementar ProductsModule
+  @OneToMany(() => Product, (product) => product.category)
+  products: Product[];
 
   private normalizeSlug(value: string): string {
     return value
